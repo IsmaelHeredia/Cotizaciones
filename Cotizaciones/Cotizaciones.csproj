@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B634BE6-4106-49D2-B6A8-D732F7D8ACA9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cotizaciones</RootNamespace>
+    <AssemblyName>Cotizaciones</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hojas.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IronPdf, Version=2020.3.2.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.2020.3.2\lib\net40\IronPdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IronPdf.Assets.Rendering.Windows, Version=18.0.0.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iron.Assets.Rendering.Windows.18.0.1\lib\net40\IronPdf.Assets.Rendering.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.112.2\lib\net20\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.112.2\lib\net20\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2016.1.112.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.1.112.20\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2016.1.112.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.1.112.20\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2016.1.112.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.1.112.20\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2016.1.112.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.1.112.20\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datos\AccesoDatos.cs" />
+    <Compile Include="Datos\ClienteDatos.cs" />
+    <Compile Include="Datos\ConfiguracionDatos.cs" />
+    <Compile Include="Datos\CotizacionDatos.cs" />
+    <Compile Include="Datos\ServicioDatos.cs" />
+    <Compile Include="Formularios\Configuración\FormConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Configuración\FormConfiguracion.Designer.cs">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormAgregarServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormAgregarServicio.Designer.cs">
+      <DependentUpon>FormAgregarServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormEditarServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormEditarServicio.Designer.cs">
+      <DependentUpon>FormEditarServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones\Conexion.cs" />
+    <Compile Include="Funciones\Funciones.cs" />
+    <Compile Include="Modelos\Cliente.cs" />
+    <Compile Include="Modelos\Configuracion.cs" />
+    <Compile Include="Formularios\Clientes\FormAgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FormAgregarCliente.Designer.cs">
+      <DependentUpon>FormAgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormAgregarCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormAgregarCotizacion.Designer.cs">
+      <DependentUpon>FormAgregarCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormCotizaciones.Designer.cs">
+      <DependentUpon>FormCotizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FormEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FormEditarCliente.Designer.cs">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormEditarCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cotizaciones\FormEditarCotizacion.Designer.cs">
+      <DependentUpon>FormEditarCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Cotizacion.cs" />
+    <Compile Include="Modelos\Servicio.cs" />
+    <Compile Include="RadInputBox.cs" />
+    <EmbeddedResource Include="Formularios\Configuración\FormConfiguracion.resx">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\FormAgregarCliente.resx">
+      <DependentUpon>FormAgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cotizaciones\FormAgregarCotizacion.resx">
+      <DependentUpon>FormAgregarCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cotizaciones\FormAgregarServicio.resx">
+      <DependentUpon>FormAgregarServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cotizaciones\FormCotizaciones.resx">
+      <DependentUpon>FormCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\FormEditarCliente.resx">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cotizaciones\FormEditarCotizacion.resx">
+      <DependentUpon>FormEditarCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cotizaciones\FormEditarServicio.resx">
+      <DependentUpon>FormEditarServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hojas.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.2\build\net20\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.2\build\net20\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.2\build\net20\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.2\build\net20\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
